@@ -1,0 +1,27 @@
+1. angular directive- to manipulate dom
+1.1 component directive
+1.2 structural directive- to add or remove html elements based on some condition/length
+                          of an array
+1.2.1 *ngIf="condition"   
+1.2.2 *ngFor="let variable name of array-name"                       
+
+2. activateroute is a class name and it s used to take a particular details from an api
+the class params is used for that
+
+3.data binding
+oneway binding
+--------------
+3.1 component(ts) to view(html)
+      3.1.1 string interpolation  syntax: {{event-property-name}} in html
+      3.1.2 property binding syntax: [attribute]="event-property-name"
+3.2 view(html) to component(ts)    
+      3.2.1 event binding - (event-name)="function call()"  
+      3.2.2 event binding using $event -  (event-name)="function call($event)"
+
+two way binding
+---------------
+3.3 ngModel- [()]     
+
+pipe
+--------------
+used to change the user format

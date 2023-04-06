@@ -1,0 +1,84 @@
+<!-- Product section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"> <img class="card-img-top mb-5 mb-md-0 " src="{{restDetails.photograph}}" alt="..." />
+            </div>
+            <div class="col-md-6">
+                <div class="small mb-1 text-light">id:{{restDetails.id}}</div>
+                <h1 class="display-5 fw-bolder text-light ">{{restDetails.name}}</h1>
+
+                <!-- update and delete -->
+                <div class="fs-5 mb-2">
+                    <a routerLink="/update/{{restDetails.id}}">update restaurant</a> |
+                    <a routerLink="/delete/{{restDetails.id}}">delete restaurant</a>
+                </div>
+
+                <div class="fs-5 mb-5">
+                    <span class=" text-light">{{restDetails.neighborhood}}</span>
+                </div>
+                <p class=" text-light">{{restDetails.address}}</p>
+                <p class=" text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quas tenetur
+                    perspiciatis neque ad
+                    harum sapiente fugiat, iure ea, numquam earum dolore aperiam molestias assumenda molestiae, magni
+                    explicabo fugit a!</p>
+
+                <!-- launch demo modal -->
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-dark " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Operating hours
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content bg-dark">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Operating hours</h1>
+                                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body bg-dark ">
+                                <ul class="list-group ">
+                                    <li class="list-group-item bg-dark text-light">Sunday : {{restDetails.operating_hours.Sunday}}</li>
+                                    <li class="list-group-item bg-dark text-light">Monday : {{restDetails.operating_hours.Monday}}</li>
+                                    <li class="list-group-item bg-dark text-light">Tuesday : {{restDetails.operating_hours.Tuesday}}</li>
+                                    <li class="list-group-item bg-dark text-light">Wednesday : {{restDetails.operating_hours.Wednesday}}
+                                    </li>
+                                    <li class="list-group-item bg-dark text-light">Thursday : {{restDetails.operating_hours.Thursday}}</li>
+                                    <li class="list-group-item bg-dark text-light">Friday : {{restDetails.operating_hours.Friday}}</li>
+                                    <li class="list-group-item bg-dark text-light">Saturday : {{restDetails.operating_hours.Saturday}}</li>
+
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-dark mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Reviews
+                  </button>
+                  
+
+                  <div class="collapse" id="collapseExample">
+                    <div class="card card-body bg-dark mt-2 text-light">
+                        <div *ngFor="let review of restDetails.reviews">
+                         <h5 class="text-light">{{review.name}} : ({{review.date}}) </h5>
+                         <p  class="text-light">{{review.comments}}</p>
+                         <h6  class="text-light">ratings:{{review.rating}}</h6>
+
+                        </div>
+                    </div>
+                  </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
